@@ -1,0 +1,17 @@
+.quiz .card {
+  width: 70%;
+  margin: 20px auto;
+  background: rgb(216 223 233);
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.45);
+}
+
+.quiz .card p{
+    margin-left: 20px;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
