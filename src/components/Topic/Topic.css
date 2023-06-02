@@ -5,6 +5,10 @@
     margin: 0 auto;
 }
 
+.title h2{
+    color: rgb(70 135 93);
+}
+
 .topic{
     margin: 0 20px;
 }

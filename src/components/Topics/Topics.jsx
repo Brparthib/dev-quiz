@@ -8,7 +8,7 @@ const Topics = () => {
   return (
     <div>
       <div className="title">
-        <h2>Dev-Quiz</h2>
+        <h2>{'<Dev-Quiz/>'}</h2>
         <p>Welcome to Dev-Quiz, the ultimate destination to challenge your knowledge and have a blast! Put your thinking cap on and embark on a thrilling journey of quizzes designed to entertain, educate, and engage you.</p>
       </div>
       <div className="topic-container">

@@ -12,8 +12,13 @@
 }
 
 .header a{
-    color: rgb(60 52 171);
+    color: rgb(13 88 153);
     font-size: 20px;
+    transition: all .4s;
+}
+
+.header a:hover{
+    color: rgb(210, 119, 15);
 }
 
 .logo a{
