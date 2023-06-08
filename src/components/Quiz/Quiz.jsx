@@ -5,24 +5,51 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { addToDb, getStoredQuiz } from "../../utilities/quizDb";
+import { ToastContainer, toast } from "react-toastify";
 
 const Quiz = ({ quiz, idx }) => {
-  const {id, question, options} = quiz;
+  const { id, question, options } = quiz;
 
-  const [quest, setQuest] = useState([])
-
-  useEffect(() => {
-    fetch('')
-  })
-
+  let answer;
   const handleClickQuiz = (id, str) => {
     addToDb(str);
-
-    const storedQuiz = getStoredQuiz()
-    
-
-
+    if (quiz.correctAnswer === str) {
+      toast.success('Correct Answer', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    } else {
+      toast.error('Oops Wrong Answer', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
   };
+
+  const handleAnswer = () =>{
+    toast.success(`Answer: ${quiz.correctAnswer}`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
 
   return (
     <div className="quiz">
@@ -32,7 +59,7 @@ const Quiz = ({ quiz, idx }) => {
             <span>Quiz {idx + 1}:</span>
             {question}
             <Link>
-              <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
+              <FontAwesomeIcon onClick={handleAnswer} icon={faEye}></FontAwesomeIcon>
             </Link>
           </p>
           <div className="options">
@@ -47,6 +74,7 @@ const Quiz = ({ quiz, idx }) => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

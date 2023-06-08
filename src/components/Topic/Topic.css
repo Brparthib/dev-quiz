@@ -10,7 +10,7 @@
 }
 
 .topic {
-  margin: 0 20px;
+  margin: 20px 20px;
 }
 
 .topic .card {
@@ -39,6 +39,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 550px)  {
+  .topic .card-body {
+    display: inline;
+  }
 }
 
 .topic .card-body p {
