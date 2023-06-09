@@ -37,6 +37,13 @@ function App() {
           element: <Quizes></Quizes>
         }
       ]
+    },
+    {
+      path: '*', 
+      element: <div className='text-center pt-5 text-danger'>
+        <h2>404</h2>
+        <h2>Oops! page is not found</h2>
+      </div>
     }
   ])
   return (

@@ -1,40 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/choose.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="header">
       <div className="logo">
-        <Link to='/'>
+        <Link to="/">
           <img src={logo} alt="" />
           <p>Dev-Quiz</p>
         </Link>
       </div>
-      <nav>
-        <ul className="nav justify-content-end">
-          <li className="nav-item">
-            <Link
-              to="/"
-              className="nav-link active"
-              aria-current="page"
-              href="#"
-            >
-              Topics
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="statistics" className="nav-link" href="#">
-              Statistics
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="blog" className="nav-link" href="#">
-              Blog
-            </Link>
-          </li>
-        </ul>
+
+      <div>
+        {open ? (
+          <XMarkIcon onClick={() => setOpen(!open)} className="menuIcon" />
+        ) : (
+          <Bars3Icon onClick={() => setOpen(!open)} className="menuIcon" />
+        )}
+      </div>
+
+      <nav className={`nav-bar ${open ? "navShow" : "navClose"}`}>
+          <Link to="/" className="nav-link">
+            Topics
+          </Link>
+          <Link to="statistics" className="nav-link">
+            Statistics
+          </Link>
+          <Link to="blog" className="nav-link">
+            Blog
+          </Link>
       </nav>
     </div>
   );

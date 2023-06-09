@@ -30,3 +30,76 @@
 .logo a p{
     margin-left: 10px;
 }
+
+.menuIcon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-bar a{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 768px)  {
+    .header{
+        position: relative;
+    }
+
+    .menuIcon{
+        display: block;
+    }
+
+    .nav-bar{
+        background: rgb(196, 224, 255);
+        border-top: 1px solid rgb(31, 68, 110);
+    }
+
+    .nav-bar a{
+        display: block;
+        margin: 20px;
+    }
+    
+    .navShow{
+        width: 150px;
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        z-index: 99999;
+        transition: all .5s;
+    }
+    
+    
+    .navClose{
+        width: 150px;
+        position: absolute;
+        top: 70px;
+        right: -150px;
+        transition: all .5s;
+    }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 273px){
+    .header{
+        padding: 10px 20px;
+    }
+
+    .logo a{
+        display: block;
+        text-align: center;
+    }
+
+    .navShow{
+        top: 116px;
+    }
+    
+    .navClose{
+        top: 116px;
+    }
+}
+
+
