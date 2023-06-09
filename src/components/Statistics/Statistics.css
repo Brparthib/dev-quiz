@@ -1,0 +1,7 @@
+.statistics .card{
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 10px;
+    background: rgb(224, 229, 236);
+}

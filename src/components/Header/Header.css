@@ -78,6 +78,7 @@
         position: absolute;
         top: 70px;
         right: -150px;
+        z-index: 99999;
         transition: all .5s;
     }
 
